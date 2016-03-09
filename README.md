@@ -124,7 +124,7 @@ The figure below shows the the total number of operations as a function of
 a longer number of iterations. However, I don't have the time for this at the
 moment, and it seems way more scalable than my needs (the rates seem constant).
 
-![alt text](https://github.com/mmaakh/fsdb/blob/master/benchmarks/plots/plots.png?raw=true "scalability benchmark plot"
+![alt text](https://github.com/mmaakh/fsdb/blob/master/benchmarks/plots/plots.png?raw=true) "scalability benchmark plot"
 
 
 Usage
