@@ -13,7 +13,7 @@ def myhash(key):
 mydb = fsdb.storage('./storage_root', f=myhash)
 
 # general benchmark params
-n = 50001
+n = 100001
 key_prefix = 'testkey'
 value_prefix = 'testvalue'
 
