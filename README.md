@@ -24,6 +24,29 @@ properties:
 
   * **Open source:** licensed under the terms of GPLv3.
 
+Scope
+-----
+If you are satisfied with the read and write operations on your file system
+(could be physically on a spinning disk, SSD, or RAM) by using a Python
+interpretor, except that you wish the total time to not significantly increase
+as you add more key-value pairs, then this module is suitable to you.
+
+However, if you aren't satisfied with the read/write speeds on your file
+system, nor that of Python, then clearly this module isn't suitable to you.
+
+The primary motivation of this module is for a use case of mine where the
+constant delays imposed by the file system and Python were sufficient are
+adequately fast, except that I did not wish the delay to increase significantly
+as the storage gets bigger. Additionally, I have the constraint that RAM is too
+precious to store a large key-value store in it, but cheap enough to execute a
+Python code.
+
+If you really like this key-value store module and wish to stretch to its
+limits, you may try setting `root` to a path that physically exists in a RAM
+disk, along with attempting to execute your code using PyPy2 or PyPy3. I have
+not tried this as of yet, however if you do so then I am interested in knowing
+your findings.
+
 Usage
 =====
   1. A storage object `mystore` must be instantiated from the class
@@ -43,9 +66,9 @@ Usage
 Example
 =======
 ```python
-# import fsdb module
-import fsdb
-import hashlib
+import fsdb # import the fsdb module
+import hashlib # only needed in this specific example to implement the function
+               # `myhash`
 
 # define your hash function, here we use MD5
 def myhash(key):
@@ -73,3 +96,7 @@ if myvalue == None:
 else:
     print('not deleted')
 ```
+
+Contact details
+===============
+``m [ta] khonji [tod] org``.
