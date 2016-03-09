@@ -119,19 +119,27 @@ mypool  feature@filesystem_limits   disabled                    local
 mypool  feature@large_blocks        disabled                    local
 ```
 
-The figure below shows the the total number of operations as a function of
-``n`` (i.e. total number of stored key-value pairs). This needs to be done for
-a longer number of iterations. However, I don't have the time for this at the
-moment, and it seems way more scalable than my needs (the rates seem constant).
+The figure below shows the total number of operations as a function of ``n``
+(i.e. total number of stored key-value pairs). This needs to be done for a
+longer number of iterations. However, I don't have the time for this at the
+moment, and it seems way more scalable than my needs (note how the total number
+of operations per second remain almost constant and do not degrade as total
+number of stored samples in the key-value store increase). Of course, it must
+degrade logarithmically (as the indexing is essentially a balanced multi-way
+decision tree), however the speed by which the rates fall down is not fast (in
+fact the degradation must be de accelerating, however the evaluation doesn't
+show this due to limitations in the benchmark).
 
 ![scalability benchmark](https://github.com/mmaakh/fsdb/blob/master/benchmarks/plots/plots.png?raw=true)
 
-You can notice that some of the rates actually increase. This must be due to
-ZFS's Adaptive Replacement Cache (ARC).
+You can notice that some of the rates actually increase. This probably due to
+ZFS's Adaptive Replacement Cache (ARC). This is one of the advantages of
+relying on a file system: it caches for you whenever other running processes
+don't need the available RAM.
 
-
-**Note:** of course, more parameters need testing, such as the effect of key
-length, value length, and `dirlen`.
+**Note:** more parameters need testing, such as the effect of key length, value
+length, and `dirlen`, however I have no plans to extend such evaluations. I
+find the evaluation results to be more than adequately scalable for my purpose.
 
 
 Usage
@@ -146,7 +154,7 @@ Usage
 
   2. Then the key-value pairs can be stored, retrieved and deleted by
      `mystore.store(KEY, VALUE)`, `mystore.retrieve(KEY)` and
-     `mystore.delete(KEY, cleanup=BOOLE)`, respectively, where `KEY` must be
+     `mystore.delete(KEY, cleanup=BOOL)`, respectively, where `KEY` must be
      named such that it is a valid file name, `VALUE` can be any arbitrary
      value that is to be stored, and `cleanup` decides whether empty
      directories should be deleted upon the deletion of their key-value pairs.
