@@ -124,7 +124,14 @@ The figure below shows the the total number of operations as a function of
 a longer number of iterations. However, I don't have the time for this at the
 moment, and it seems way more scalable than my needs (the rates seem constant).
 
-![alt text](https://github.com/mmaakh/fsdb/blob/master/benchmarks/plots/plots.png?raw=true) "scalability benchmark plot"
+![scalability benchmark](https://github.com/mmaakh/fsdb/blob/master/benchmarks/plots/plots.png?raw=true)
+
+You can notice that some of the rates actually increase. This must be due to
+ZFS's Adaptive Replacement Cache (ARC).
+
+
+**Note:** of course, more parameters need testing, such as the effect of key
+length, value length, and `dirlen`.
 
 
 Usage
