@@ -16,7 +16,9 @@ properties:
     same is `O(n)`. However, the probability of
     collisions are _extremely_ marginal; for example if a 256bit uniformly
     distributed hash function is used (e.g. SHA256), and if `n=4.8*10^37`,
-    then the probability of any collision to occur is `0.01`.
+    then the probability of any collision to occur is `0.01`. More details on
+    the probability such collisions [here]
+    (https://en.wikipedia.org/wiki/Birthday_attack).
 
   * **Few dependencies:** the only dependency is Python.
 
