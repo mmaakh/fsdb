@@ -52,7 +52,7 @@ not tried this as of yet, however if you do so then I am interested in knowing
 your findings.
 
 
-A preliminary benchmark
+A _preliminary_ benchmark
 -----------------------
 Below is the result of executing `python3.4 preliminary_benchmark.py`, which
 tests the speed of computing the md5 hash of keys (for comparision), and
@@ -119,12 +119,12 @@ mypool  feature@filesystem_limits   disabled                    local
 mypool  feature@large_blocks        disabled                    local
 ```
 
-**Note:** the benchmark above serves only as a preliminary quick test for a
-first approximation of the performance of `fsdb`.
+The figure below shows the the total number of operations as a function of
+``n`` (i.e. total number of stored key-value pairs). This needs to be done for
+a longer number of iterations. However, I don't have the time for this at the
+moment, and it seems way more scalable than my needs (the rates seem constant).
 
-the figure below shows the the total number of operations as a function of
-``n`` (i.e. total number of stored key-value pairs).
-![fig1](https://github.com/mmaakh/fsdb/blob/master/benchmarks/plots/plots.png?raw=true "scalability benchmark plot"
+![alt text](https://github.com/mmaakh/fsdb/blob/master/benchmarks/plots/plots.png?raw=true "scalability benchmark plot"
 
 
 Usage
