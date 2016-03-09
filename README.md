@@ -135,7 +135,7 @@ Usage
 
   2. Then the key-value pairs can be stored, retrieved and deleted by
      `mystore.store(KEY, VALUE)`, `mystore.retrieve(KEY)` and
-     `mystore.delete(KEY, cleanup=BOOLEAN)`, respectively, where `KEY` must be
+     `mystore.delete(KEY, cleanup=BOOLE)`, respectively, where `KEY` must be
      named such that it is a valid file name, `VALUE` can be any arbitrary
      value that is to be stored, and `cleanup` decides whether empty
      directories should be deleted upon the deletion of their key-value pairs.
