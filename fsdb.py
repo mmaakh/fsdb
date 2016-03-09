@@ -17,7 +17,6 @@
 
 
 import sys
-import hashlib
 import os
 
 
@@ -62,8 +61,6 @@ class storage:
             sys.stderr.write("ERROR: '%s'.\n" %(e))
             sys.exit(CODE_FAIL)
 
-        return CODE_PASS
-
     # retrieve stored value for given key
     def retrieve(self, key):
         # define key-value storage path
@@ -96,5 +93,3 @@ class storage:
                     sys.exit(CODE_FAIL)
         except:
             pass
-
-        return CODE_PASS
