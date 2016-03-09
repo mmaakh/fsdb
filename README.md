@@ -127,8 +127,8 @@ of operations per second remain almost constant and do not degrade as total
 number of stored samples in the key-value store increase). Of course, it must
 degrade logarithmically (as the indexing is essentially a balanced multi-way
 decision tree), however the speed by which the rates fall down is not fast (in
-fact the degradation must be de accelerating, however the evaluation doesn't
-show this due to limitations in the benchmark).
+fact the degradation must be even _de-accelerating_, however the evaluation
+doesn't show this due to limitations in the benchmark).
 
 ![scalability benchmark](https://github.com/mmaakh/fsdb/blob/master/benchmarks/plots/plots.png?raw=true)
 
