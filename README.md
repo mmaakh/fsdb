@@ -1,8 +1,8 @@
 Introduction
 ============
 
-This is a Python module that implements a key-value store with the following
-properties:
+This is a simple, yet scalable, Python module that implements a key-value store
+with the following properties:
 
   * **RAM efficient:** only the queried key value is stored in RAM. The reset
     of the key values are kept on disk.
