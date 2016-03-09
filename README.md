@@ -122,6 +122,10 @@ mypool  feature@large_blocks        disabled                    local
 **Note:** the benchmark above serves only as a preliminary quick test for a
 first approximation of the performance of `fsdb`.
 
+the figure below shows the the total number of operations as a function of
+``n`` (i.e. total number of stored key-value pairs).
+![fig1](https://github.com/mmaakh/fsdb/blob/master/benchmarks/plots/plots.png?raw=true "scalability benchmark plot"
+
 
 Usage
 =====
