@@ -80,8 +80,8 @@ benchmarking retrieving nonexistent key-value pairs.. ok
   delretrieve: 47092.987875052066 operations per second
 ```
 
-My `root` is set to point to a file that exists in a RAID10 ZFS setup with the
-following parameters (as returned by `zpool get all`):
+My `root` is set to point to a file that exists in a RAID10 ZFS partition with
+the following parameters (as returned by `zpool get all`):
 ```
 NAME        PROPERTY                    VALUE                       SOURCE
 mypool  size                        1.81T                       -
