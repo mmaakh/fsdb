@@ -42,7 +42,7 @@ Usage
 
 Example
 =======
-```
+```python
 # import fsdb module
 import fsdb
 import hashlib
