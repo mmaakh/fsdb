@@ -9,7 +9,7 @@ with the following properties:
 
   * **Scalable search time**: if `f` is set to a uniformly distributed hash
     function, then the key values are indexed by a balanced multi-way
-    decision tree. I.e. the asymptotic worst run-time time complexity to
+    decision tree. I.e. the asymptotic worst run-time complexity to
     search and find a key value is `O(log n)` when collision-free, where `n`
     is the total number of stored key-value pairs. When collisions
     are accounted for, then the asymptotic worst run time complexity of the
@@ -30,7 +30,7 @@ Scope
 -----
 If you are satisfied with the speed of the read and write operations on your
 file system (could be physically on a spinning disk, SSD, or RAM) by using a
-Python interpretor, except for wanting the total run-time time and RAM
+Python interpretor, except for wanting the total run-time and RAM
 consumption to not increase significantly as you add more key-value pairs, then
 this module is a valid choice.
 
