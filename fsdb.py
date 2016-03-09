@@ -30,7 +30,7 @@ def _getpath(root, key, dirlen):
     path = '/'.join(
         [key[i:i+dirlen] for i in range(0, len(key), dirlen)]
     )
-    return '%s/%s/' %(root, path)
+    return '%s/%s/' % (root, path)
 
 
 # FSDB STORAGE CLASS
@@ -58,7 +58,7 @@ class storage:
             with open(path + key, 'w') as f:
                 f.write(value)
         except Exception as e:
-            sys.stderr.write("ERROR: '%s'.\n" %(e))
+            sys.stderr.write("ERROR: '%s'.\n" % (e))
             sys.exit(CODE_FAIL)
 
     # retrieve stored value for given key
@@ -76,7 +76,7 @@ class storage:
         return value
 
     # delete key-value pair
-    def delete(self, key):
+    def delete(self, key, cleanup=True):
         # define key-value storage path
         path = _getpath(self.root, self.f(key), self.dirlen)
 
@@ -85,11 +85,11 @@ class storage:
         try:
             os.remove(path + key)
             keys = os.listdir(path)
-            if len(keys) == 0:
+            if (len(keys) == 0) and cleanup:
                 try:
                     os.removedirs(path)
                 except Exception as e:
-                    sys.stderr.write("ERROR: '%s'.\n" %(e))
+                    sys.stderr.write("ERROR: '%s'.\n" % (e))
                     sys.exit(CODE_FAIL)
         except:
             pass
